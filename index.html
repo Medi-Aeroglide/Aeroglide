@@ -38,7 +38,7 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, .tech-font { font-family: 'Orbitron', sans-serif; }
         .glass-panel {
-            background: rgba(30, 41, 59, 0.9);
+            background: rgba(30, 41, 59, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -46,13 +46,6 @@
             background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
             linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
             background-size: 30px 30px;
-        }
-        .blueprint-overlay {
-            background-color: rgba(30, 58, 138, 0.2);
-            background-image: 
-                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
         }
         /* Animation for view switching */
         .fade-in {
@@ -126,9 +119,16 @@
                     21st Century Medical Delivery. Autonomous, Fast, Error-Free.
                 </p>
                 
-                <!-- MAIN DESIGN DISPLAY -->
+                <!-- MAIN HERO IMAGE SLOT -->
                 <div class="w-full max-w-3xl mx-auto aspect-video bg-tech-blueprint border-2 border-aero-500/50 rounded-xl flex items-center justify-center mb-10 relative overflow-hidden group shadow-2xl shadow-aero-900/50">
-                    <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?q=80&w=1600&auto=format&fit=crop" alt="Futuristic Drone Concept" class="absolute inset-0 w-full h-full object-cover opacity-80 z-10">
+                    <img src="hero.jpg" onerror="this.style.display='none'" alt="AeroGlide MK-1" class="absolute inset-0 w-full h-full object-contain bg-slate-900 z-10">
+                    
+                    <!-- Fallback Text -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-0">
+                        <i class="fa-solid fa-image text-4xl text-slate-600 mb-2"></i>
+                        <p class="text-slate-400 text-sm">Upload 'hero.jpg' to see image</p>
+                    </div>
+
                     <div class="absolute bottom-4 left-4 z-20 bg-black/70 backdrop-blur-sm border border-aero-500/30 px-4 py-2 rounded text-xs text-white font-mono">
                         <i class="fa-solid fa-circle-check text-green-400 mr-2"></i>Model: AeroGlide MK-1
                     </div>
@@ -262,202 +262,19 @@
             
             <!-- Tabs/Grid for Images -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Image 1 -->
+                <!-- Image 1 (BLUEPRINT) -->
                 <div class="group relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 shadow-xl">
                     <div class="aspect-video bg-tech-blueprint flex items-center justify-center overflow-hidden relative">
-                         <img src="https://plus.unsplash.com/premium_photo-1682125773446-259ce64f9dd7?q=80&w=1200&auto=format&fit=crop" alt="Drone Blueprint Design" class="w-full h-full object-cover z-10">
-                         <div class="absolute bottom-0 left-0 w-full bg-black/50 p-2 text-xs text-white">Concept Render</div>
+                         <!-- Changed to blueprint.jpg -->
+                         <img src="blueprint.jpg" onerror="this.style.display='none'" alt="Drone Blueprint Design" class="w-full h-full object-cover z-10">
+                         
+                         <!-- Fallback -->
+                         <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-0">
+                            <i class="fa-solid fa-ruler text-4xl text-slate-600 mb-2"></i>
+                            <p class="text-slate-400 text-sm">Upload 'blueprint.jpg'</p>
+                        </div>
+                         <div class="absolute bottom-0 left-0 w-full bg-black/50 p-2 text-xs text-white z-20">Dimensions & Specs</div>
                     </div>
                     <div class="p-6">
                         <div class="text-aero-400 text-xs font-bold tracking-wider uppercase mb-2">Phase 1</div>
-                        <h4 class="text-white font-bold text-lg mb-2">CAD Blueprints</h4>
-                        <p class="text-slate-400 text-sm">Finalized schematic with ducted fan configuration to ensure safety in crowded hospital environments.</p>
-                    </div>
-                </div>
-                <!-- Image 2 -->
-                <div class="group relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 shadow-xl">
-                    <div class="aspect-video bg-slate-700 flex items-center justify-center">
-                        <span class="text-slate-500 text-sm flex flex-col items-center"><i class="fa-solid fa-cube text-2xl mb-2"></i>Upload 3D Model</span>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-aero-400 text-xs font-bold tracking-wider uppercase mb-2">Phase 2</div>
-                        <h4 class="text-white font-bold text-lg mb-2">3D Modeling</h4>
-                        <p class="text-slate-400 text-sm">Fusion 360 modeling used for stress testing frame integrity and simulating airflow.</p>
-                    </div>
-                </div>
-                <!-- Image 3 -->
-                <div class="group relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 shadow-xl">
-                    <div class="aspect-video bg-slate-700 flex items-center justify-center">
-                        <span class="text-slate-500 text-sm flex flex-col items-center"><i class="fa-solid fa-camera text-2xl mb-2"></i>Upload Final Prototype</span>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-aero-400 text-xs font-bold tracking-wider uppercase mb-2">Phase 3</div>
-                        <h4 class="text-white font-bold text-lg mb-2">The Build</h4>
-                        <p class="text-slate-400 text-sm">Hardware integration including Pixhawk controller, GPS module, and redundant power systems.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Videos Section -->
-            <div class="mt-20 mb-20">
-                <h3 class="text-2xl font-bold text-white mb-8 pl-4 border-l-4 border-aero-500">Testing Logs & Footage</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-black/40 rounded-xl p-2 border border-slate-700 hover:border-aero-500 transition cursor-pointer group">
-                        <div class="aspect-video bg-slate-800 rounded flex items-center justify-center group-hover:bg-slate-700 transition relative overflow-hidden">
-                            <div class="absolute inset-0 bg-aero-500/10 opacity-0 group-hover:opacity-100 transition"></div><i class="fa-solid fa-play text-4xl text-aero-500 group-hover:scale-110 transition"></i>
-                        </div>
-                        <div class="p-3"><p class="text-white font-semibold text-sm">Test 01: PID Tuning Hover</p><p class="text-xs text-slate-500 mt-1">Initial stability check.</p></div>
-                    </div>
-                    <div class="bg-black/40 rounded-xl p-2 border border-slate-700 hover:border-aero-500 transition cursor-pointer group">
-                        <div class="aspect-video bg-slate-800 rounded flex items-center justify-center group-hover:bg-slate-700 transition relative overflow-hidden">
-                            <div class="absolute inset-0 bg-aero-500/10 opacity-0 group-hover:opacity-100 transition"></div><i class="fa-solid fa-play text-4xl text-aero-500 group-hover:scale-110 transition"></i>
-                        </div>
-                        <div class="p-3"><p class="text-white font-semibold text-sm">Test 02: Sensor Calibration</p><p class="text-xs text-slate-500 mt-1">Compass & GPS lock verification.</p></div>
-                    </div>
-                    <div class="bg-black/40 rounded-xl p-2 border border-slate-700 hover:border-aero-500 transition cursor-pointer group">
-                        <div class="aspect-video bg-slate-800 rounded flex items-center justify-center group-hover:bg-slate-700 transition relative overflow-hidden">
-                            <div class="absolute inset-0 bg-aero-500/10 opacity-0 group-hover:opacity-100 transition"></div><i class="fa-solid fa-play text-4xl text-aero-500 group-hover:scale-110 transition"></i>
-                        </div>
-                        <div class="p-3"><p class="text-white font-semibold text-sm">Test 03: Autonomous Waypoint</p><p class="text-xs text-slate-500 mt-1">Full mission execution test.</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===========================
-         VIEW 3: ABOUT PAGE
-    ============================ -->
-    <div id="about-page" class="hidden fade-in">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 min-h-screen">
-            
-            <!-- Back Buttons -->
-            <button onclick="showPage('home')" class="md:hidden mb-8 text-aero-500 font-bold flex items-center">
-                <i class="fa-solid fa-arrow-left mr-2"></i> Back to Home
-            </button>
-             <button onclick="showPage('home')" class="hidden md:flex mb-8 text-aero-500 font-bold items-center hover:text-white transition-colors">
-                <i class="fa-solid fa-arrow-left mr-2"></i> Back to Home
-            </button>
-
-            <!-- Profile Card -->
-            <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-32 h-32 bg-slate-600 rounded-full flex items-center justify-center text-4xl text-slate-400 border-4 border-slate-700 shadow-lg">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                    <div class="text-center md:text-left">
-                        <h2 class="text-3xl font-bold text-white">About The Creator</h2>
-                        <p class="text-aero-400 font-medium mb-4">Class 11 Student (PCM + CS)</p>
-                        <p class="text-slate-300 leading-relaxed max-w-2xl">
-                            I am passionate about Robotics and Embedded Systems. AeroGlide is my attempt to solve real-world logistics problems using the principles of Physics and Computer Science I learn in school. My goal is to create technology that directly improves healthcare efficiency.
-                        </p>
-                        <div class="mt-6 flex gap-3 justify-center md:justify-start flex-wrap">
-                            <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Arduino / C++</span>
-                            <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Python</span>
-                            <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Aerodynamics</span>
-                            <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Fusion 360</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Timeline (2025) -->
-                <div class="mt-16">
-                    <h3 class="text-xl font-bold text-white mb-8 pl-4 border-l-4 border-aero-500">Project Timeline</h3>
-                    <div class="relative ml-3 border-l-2 border-slate-600 space-y-10 pb-4">
-                        <!-- Item 1 -->
-                        <div class="relative pl-8">
-                            <div class="absolute -left-[9px] top-1 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800"></div>
-                            <h4 class="text-white font-bold text-lg">June 2025</h4>
-                            <p class="text-slate-400 text-sm mt-1">Ideation & Literature Review. Researching hospital logistics inefficiencies.</p>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="relative pl-8">
-                            <div class="absolute -left-[9px] top-1 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800"></div>
-                            <h4 class="text-white font-bold text-lg">August 2025</h4>
-                            <p class="text-slate-400 text-sm mt-1">Component Procurement & CAD Design. Finalizing frame geometry.</p>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="relative pl-8">
-                            <div class="absolute -left-[9px] top-1 w-4 h-4 bg-aero-500 rounded-full animate-pulse border-2 border-slate-800"></div>
-                            <h4 class="text-white font-bold text-lg">Current Stage</h4>
-                            <p class="text-slate-400 text-sm mt-1">Prototype Assembly & Initial Hover Tests. Calibrating PID loops.</p>
-                        </div>
-                         <!-- Item 4 -->
-                        <div class="relative pl-8">
-                            <div class="absolute -left-[9px] top-1 w-4 h-4 bg-slate-600 rounded-full border-2 border-slate-800"></div>
-                            <h4 class="text-white font-bold text-lg">Future Goal</h4>
-                            <p class="text-slate-400 text-sm mt-1">Integration of Camera-based Object Detection.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Bottom spacing -->
-            <div class="h-20"></div>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="bg-black py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="flex justify-center gap-4 mb-4">
-                <button onclick="showPage('about')" class="text-slate-400 hover:text-white text-sm transition-colors">
-                    About the Creator
-                </button>
-                <button class="text-slate-400 hover:text-white text-sm transition-colors">
-                    Contact Email
-                </button>
-            </div>
-            <div class="text-xs text-slate-600">
-                &copy; 2025 AeroGlide Project | Created for Science Exhibition
-            </div>
-        </div>
-    </footer>
-
-    <!-- SCRIPT FOR PAGE SWITCHING & MOBILE MENU -->
-    <script>
-        // Mobile Menu Toggle Logic
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        function showPage(pageId, scrollSectionId = null) {
-            const home = document.getElementById('home-page');
-            const design = document.getElementById('design-page');
-            const about = document.getElementById('about-page');
-            
-            // Hide all pages
-            home.classList.add('hidden');
-            design.classList.add('hidden');
-            about.classList.add('hidden');
-
-            // Close mobile menu if open
-            document.getElementById('mobile-menu').classList.add('hidden');
-
-            // Show requested page
-            if(pageId === 'home') {
-                home.classList.remove('hidden');
-                // Scroll logic
-                if(scrollSectionId) {
-                    setTimeout(() => {
-                        const section = document.getElementById(scrollSectionId);
-                        if(section) section.scrollIntoView({behavior: 'smooth'});
-                    }, 50);
-                } else {
-                    window.scrollTo(0,0);
-                }
-            } else if (pageId === 'design') {
-                design.classList.remove('hidden');
-                window.scrollTo(0,0);
-            } else if (pageId === 'about') {
-                about.classList.remove('hidden');
-                window.scrollTo(0,0);
-            }
-        }
-    </script>
-
-</body>
-</html>
-
-
+                        <h4 class="text-white font-bold text-lg mb-2">CAD Blueprin
