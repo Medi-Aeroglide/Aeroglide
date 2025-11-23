@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AeroGlide | Autonomous Hospital Logistics</title>
+    
+    <!-- Styles & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- 3D Model Viewer Script -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -35,6 +41,14 @@
         /* Zoom Animation for Lightbox */
         .animate-zoom { animation: zoom 0.3s ease-in-out; }
         @keyframes zoom { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        /* Model Viewer Styles */
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            background-color: #1e293b;
+            --poster-color: transparent;
+        }
     </style>
 </head>
 <body class="bg-tech-dark text-slate-300 selection:bg-aero-500 selection:text-white overflow-x-hidden">
@@ -51,7 +65,7 @@
                     <button onclick="safeShowPage('home', 'problem')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">The Problem</button>
                     <button onclick="safeShowPage('home', 'specs')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Specs</button>
                     <button onclick="safeShowPage('design')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Design Gallery</button>
-                    <button onclick="safeShowPage('about')" class="bg-aero-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-aero-500 transition-all shadow-lg shadow-aero-900/50">About Me</button>
+                    <button onclick="safeShowPage('about')" class="bg-aero-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-aero-500 transition-all shadow-lg shadow-aero-900/50">About Us</button>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button onclick="toggleMenu()" class="text-white p-2 focus:outline-none border border-slate-700 rounded hover:bg-slate-800">
@@ -65,7 +79,7 @@
                 <button onclick="safeShowPage('home', 'problem')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">The Problem</button>
                 <button onclick="safeShowPage('home', 'specs')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Technical Specs</button>
                 <button onclick="safeShowPage('design')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Design Gallery</button>
-                <button onclick="safeShowPage('about')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-bold text-aero-400 bg-slate-800/50 border border-slate-700">About Me</button>
+                <button onclick="safeShowPage('about')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-bold text-aero-400 bg-slate-800/50 border border-slate-700">About Us</button>
             </div>
         </div>
     </nav>
@@ -129,18 +143,17 @@
                 </div>
             </section>
 
-            <!-- UPDATED SPECS WITH PROPULSION -->
+            <!-- Specs -->
             <section id="specs" class="py-20 bg-tech-dark relative border-t border-slate-800">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-white text-center mb-12">Technical Specifications</h2>
-                    <!-- Changed grid to fit 5 items on large screens -->
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                         <!-- Weight -->
                         <div class="bg-slate-800 p-6 rounded-xl text-center border border-transparent hover:border-aero-500 transition">
                             <div class="w-12 h-12 bg-aero-900 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-scale-balanced text-aero-400"></i></div>
                             <h3 class="text-white font-semibold">Weight</h3><p class="text-sm text-slate-400 mt-2">0.5 - 1 kg</p>
                         </div>
-                        <!-- Propulsion (ADDED BACK) -->
+                        <!-- Propulsion -->
                         <div class="bg-slate-800 p-6 rounded-xl text-center border border-transparent hover:border-aero-500 transition">
                             <div class="w-12 h-12 bg-aero-900 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-fan text-aero-400"></i></div>
                             <h3 class="text-white font-semibold">Propulsion</h3><p class="text-sm text-slate-400 mt-2">Ducted Fans</p>
@@ -164,8 +177,27 @@
                 </div>
             </section>
 
+            <!-- How It Works (UPDATED) -->
+            <section id="working" class="py-20 bg-slate-900 border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-white text-center mb-16">Workflow Logic</h2>
+                    <div class="relative">
+                        <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-700 -z-0"></div>
+                        <div class="grid md:grid-cols-4 gap-8 relative z-10">
+                            <div class="bg-slate-800 p-6 rounded-lg text-center border border-slate-700"><div class="w-10 h-10 bg-aero-600 rounded-full text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">1</div><h4 class="text-white font-bold">Weight Check</h4><p class="text-slate-400 text-sm mt-2">Auto-takeoff validation.</p></div>
+                            
+                            <!-- STEP 2 UPDATED -->
+                            <div class="bg-slate-800 p-6 rounded-lg text-center border border-slate-700"><div class="w-10 h-10 bg-aero-600 rounded-full text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">2</div><h4 class="text-white font-bold">GPS Navigation</h4><p class="text-slate-400 text-sm mt-2">Preset route mode.</p></div>
+                            
+                            <div class="bg-slate-800 p-6 rounded-lg text-center border border-slate-700"><div class="w-10 h-10 bg-aero-600 rounded-full text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">3</div><h4 class="text-white font-bold">Avoidance</h4><p class="text-slate-400 text-sm mt-2">Dynamic path adjustment.</p></div>
+                            <div class="bg-slate-800 p-6 rounded-lg text-center border border-slate-700"><div class="w-10 h-10 bg-aero-600 rounded-full text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">4</div><h4 class="text-white font-bold">Delivery</h4><p class="text-slate-400 text-sm mt-2">Precision landing.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Applications -->
-            <section class="py-20 bg-slate-900 border-t border-slate-800">
+            <section class="py-20 bg-tech-dark border-t border-slate-800">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid md:grid-cols-2 gap-12">
                         <div>
@@ -209,14 +241,25 @@
                         </div>
                         <div class="p-6"><h4 class="text-white font-bold text-lg mb-2">Phase 1: Blueprint & Specs</h4></div>
                     </div>
-                    <!-- Phase 2: 3D Model (Clickable) -->
-                    <div class="group relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 shadow-xl cursor-pointer" onclick="openLightbox(this.querySelector('img'))">
+                    
+                    <!-- Phase 2: 3D Model (Interactive) -->
+                    <div class="group relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 shadow-xl">
                         <div class="aspect-video bg-slate-700 flex items-center justify-center relative overflow-hidden">
-                            <img src="3d_model.jpg" onerror="this.style.display='none'" alt="3D Design" class="w-full h-full object-cover z-10 hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 flex flex-col items-center justify-center z-0"><i class="fa-solid fa-cube text-2xl mb-2"></i><span class="text-slate-500 text-sm">Upload '3d_model.jpg'</span></div>
+                            <model-viewer 
+                                src="Drone_Blueprint_Design.glb" 
+                                alt="3D Model of Drone" 
+                                auto-rotate 
+                                camera-controls 
+                                ar
+                                shadow-intensity="1"
+                                style="width: 100%; height: 100%; background-color: #1e293b;"
+                                poster="3d_model.jpg">
+                            </model-viewer>
+                            <div class="absolute top-2 right-2 z-10 bg-black/50 px-2 py-1 rounded text-[10px] text-white pointer-events-none">Interactive 3D</div>
                         </div>
                         <div class="p-6"><h4 class="text-white font-bold text-lg mb-2">Phase 2: 3D Modeling</h4></div>
                     </div>
+
                     <!-- Phase 3: Prototype (Clickable) -->
                     <div class="group relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 shadow-xl cursor-pointer" onclick="openLightbox(this.querySelector('img'))">
                         <div class="aspect-video bg-slate-700 flex items-center justify-center overflow-hidden relative">
@@ -229,17 +272,17 @@
             </div>
         </div>
 
-        <!-- VIEW 3: ABOUT PAGE -->
+        <!-- VIEW 3: ABOUT PAGE (PLURALIZED) -->
         <div id="about-page" class="page-section hidden fade-in">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 min-h-screen">
                 <button onclick="safeShowPage('home')" class="mb-8 text-aero-500 font-bold flex items-center text-lg"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Home</button>
                 <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl">
                     <div class="flex flex-col md:flex-row items-center gap-8">
-                        <div class="w-32 h-32 bg-slate-600 rounded-full flex items-center justify-center text-4xl text-slate-400 border-4 border-slate-700 shadow-lg"><i class="fa-solid fa-user"></i></div>
+                        <div class="w-32 h-32 bg-slate-600 rounded-full flex items-center justify-center text-4xl text-slate-400 border-4 border-slate-700 shadow-lg"><i class="fa-solid fa-users"></i></div>
                         <div>
-                            <h2 class="text-3xl font-bold text-white">About The Creator</h2>
-                            <p class="text-aero-400 font-medium mb-4">Class 11 Student (PCM + CS)</p>
-                            <p class="text-slate-300">Passionate about Robotics and Embedded Systems. AeroGlide is my attempt to solve real-world logistics problems.</p>
+                            <h2 class="text-3xl font-bold text-white">About The Creators</h2>
+                            <p class="text-aero-400 font-medium mb-4">Class 11 Students (PCM + CS)</p>
+                            <p class="text-slate-300">We are passionate about Robotics and Embedded Systems. AeroGlide is our attempt to solve real-world logistics problems using the principles of Physics and Computer Science we learn in school. Our goal is to create technology that directly improves healthcare efficiency.</p>
                             <div class="mt-4 flex gap-2"><span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Arduino</span><span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Python</span></div>
                         </div>
                     </div>
