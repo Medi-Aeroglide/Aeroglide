@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AeroGlide | Autonomous Hospital Logistics</title>
+    <title>DAAS | Aeroglide™</title>
     
     <!-- Styles & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,7 +38,6 @@
         .fade-in { animation: fadeIn 0.4s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* Zoom Animation for Lightbox */
         .animate-zoom { animation: zoom 0.3s ease-in-out; }
         @keyframes zoom { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
@@ -58,13 +57,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center cursor-pointer" onclick="safeShowPage('home')">
-                    <i class="fa-solid fa-drone text-aero-500 text-2xl mr-2"></i>
-                    <span class="text-white font-bold text-xl tech-font tracking-wider">AeroGlide</span>
+                    <i class="fa-solid fa-layer-group text-aero-500 text-2xl mr-2"></i>
+                    <span class="text-white font-bold text-xl tech-font tracking-wider">DAAS</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <button onclick="safeShowPage('home', 'problem')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">The Problem</button>
-                    <button onclick="safeShowPage('home', 'specs')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Specs</button>
-                    <button onclick="safeShowPage('design')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Design Gallery</button>
+                <div class="hidden md:flex items-center space-x-6">
+                    <button onclick="safeShowPage('home')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</button>
+                    <button onclick="safeShowPage('product')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Product</button>
+                    <button onclick="safeShowPage('how-it-works')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">How It Works</button>
+                    <button onclick="safeShowPage('design')" class="hover:text-aero-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Design</button>
                     <button onclick="safeShowPage('about')" class="bg-aero-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-aero-500 transition-all shadow-lg shadow-aero-900/50">About Us</button>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -76,9 +76,10 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-700 shadow-2xl absolute w-full left-0 top-16">
             <div class="px-4 pt-4 pb-6 space-y-2 flex flex-col">
-                <button onclick="safeShowPage('home', 'problem')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">The Problem</button>
-                <button onclick="safeShowPage('home', 'specs')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Technical Specs</button>
-                <button onclick="safeShowPage('design')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Design Gallery</button>
+                <button onclick="safeShowPage('home')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Home</button>
+                <button onclick="safeShowPage('product')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Product & Pricing</button>
+                <button onclick="safeShowPage('how-it-works')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">How It Works</button>
+                <button onclick="safeShowPage('design')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800">Design</button>
                 <button onclick="safeShowPage('about')" class="block w-full text-left px-4 py-3 rounded-lg text-base font-bold text-aero-400 bg-slate-800/50 border border-slate-700">About Us</button>
             </div>
         </div>
@@ -87,135 +88,117 @@
     <!-- PAGE CONTAINER -->
     <div id="content-area" class="pt-16">
         
-        <!-- VIEW 1: HOME PAGE -->
+        <!-- VIEW 1: HOME PAGE (DAAS VERSION - Clean Hero + Features) -->
         <div id="home-page" class="page-section fade-in">
+            
+            <!-- HERO SECTION -->
             <section class="relative min-h-screen pt-20 pb-20 flex flex-col items-center justify-center tech-grid">
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-96 bg-aero-500/10 rounded-full blur-[100px] pointer-events-none"></div>
                 <div class="relative z-10 text-center max-w-5xl px-4 w-full">
-                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                        Revolutionizing <br class="hidden md:block" />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-aero-400 to-white">Hospital Logistics</span>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tech-font">
+                        Aeroglide™ <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-aero-400 to-white text-3xl md:text-5xl">India’s First Indoor Medical Delivery Drone</span>
                     </h1>
                     <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-                        21st Century Medical Delivery. Autonomous, Fast, Error-Free.
+                        Built by <strong class="text-white">DAAS</strong> to make hospital deliveries faster, safer, and fully automated.
                     </p>
                     
-                    <!-- Main Hero Image (Clickable) -->
-                    <div class="w-full max-w-3xl mx-auto aspect-video bg-tech-blueprint border-2 border-aero-500/50 rounded-xl flex items-center justify-center mb-10 relative overflow-hidden group shadow-2xl shadow-aero-900/50 cursor-pointer" onclick="openLightbox(this.querySelector('img'))">
-                        <img src="hero.jpg" onerror="this.style.display='none'" alt="AeroGlide Main" class="absolute inset-0 w-full h-full object-cover bg-slate-900 z-10 hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-0">
-                            <i class="fa-solid fa-image text-4xl text-slate-600 mb-2"></i>
-                            <p class="text-slate-400 text-sm">Upload 'hero.jpg'</p>
-                        </div>
-                        <div class="absolute bottom-4 left-4 z-20 bg-black/70 backdrop-blur-sm border border-aero-500/30 px-4 py-2 rounded text-xs text-white font-mono">
-                            <i class="fa-solid fa-circle-check text-green-400 mr-2"></i>Model: AeroGlide MK-1
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <button onclick="safeShowPage('home', 'specs')" class="px-8 py-4 bg-aero-600 hover:bg-aero-500 text-white rounded-lg font-bold transition shadow-lg shadow-aero-500/25 flex items-center justify-center">Technical Specs</button>
-                        <button onclick="safeShowPage('design')" class="px-8 py-4 bg-slate-800 border border-slate-600 hover:border-aero-400 text-white rounded-lg font-bold transition flex items-center justify-center hover:bg-slate-700">Design Gallery</button>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                        <button onclick="alert('Demo Request Sent!')" class="px-8 py-4 bg-aero-600 hover:bg-aero-500 text-white rounded-lg font-bold transition shadow-lg shadow-aero-500/25 flex items-center justify-center">
+                            Request Demo
+                        </button>
+                        <button onclick="alert('Brochure Downloading...')" class="px-8 py-4 bg-slate-800 border border-slate-600 hover:border-aero-400 text-white rounded-lg font-bold transition flex items-center justify-center hover:bg-slate-700">
+                            Download Brochure <i class="fa-solid fa-download ml-2"></i>
+                        </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Problem & Solution -->
-            <section id="problem" class="py-20 bg-slate-900 border-t border-slate-800">
+            <!-- KEY FEATURES -->
+            <section id="features" class="py-20 bg-slate-900 border-t border-slate-800">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <div class="p-8 border-l-4 border-red-500 bg-slate-800/50 rounded-r-xl">
-                            <h2 class="text-2xl font-bold text-white mb-6">The Problem</h2>
-                            <ul class="space-y-4 text-slate-300">
-                                <li class="flex items-start"><i class="fa-solid fa-xmark mt-1 mr-3 text-red-500"></i>Slow Delivery in Emergencies</li>
-                                <li class="flex items-start"><i class="fa-solid fa-xmark mt-1 mr-3 text-red-500"></i>Human Errors (Lost Samples)</li>
-                                <li class="flex items-start"><i class="fa-solid fa-xmark mt-1 mr-3 text-red-500"></i>Resource Waste (Walking Time)</li>
-                            </ul>
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-white tech-font">Key Features</h2>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-aero-500 transition">
+                            <i class="fa-solid fa-location-crosshairs text-3xl text-aero-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Autonomous Indoor Navigation</h3>
+                            <p class="text-slate-400">Self-driving technology designed for complex hospital corridors.</p>
                         </div>
-                        <div class="p-8 border-l-4 border-green-500 bg-slate-800/50 rounded-r-xl">
-                            <h2 class="text-2xl font-bold text-white mb-6">The Solution</h2>
-                            <ul class="space-y-4 text-slate-300">
-                                <li class="flex items-start"><i class="fa-solid fa-check mt-1 mr-3 text-green-500"></i>Autonomous Navigation</li>
-                                <li class="flex items-start"><i class="fa-solid fa-check mt-1 mr-3 text-green-500"></i>24/7 Rapid Response</li>
-                                <li class="flex items-start"><i class="fa-solid fa-check mt-1 mr-3 text-green-500"></i>High Accuracy Tracking</li>
-                            </ul>
+                        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-aero-500 transition">
+                            <i class="fa-solid fa-stopwatch text-3xl text-aero-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">2–5 Minute Delivery</h3>
+                            <p class="text-slate-400">Ward-to-ward transport speeds that save critical time.</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-aero-500 transition">
+                            <i class="fa-solid fa-handshake text-3xl text-aero-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Works WITH Staff</h3>
+                            <p class="text-slate-400">Supports nurses and porters; doesn't replace them.</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-aero-500 transition">
+                            <i class="fa-solid fa-charging-station text-3xl text-aero-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Auto-Charging</h3>
+                            <p class="text-slate-400">Lands on smart pad for automatic recharging between flights.</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-aero-500 transition">
+                            <i class="fa-solid fa-building-circle-check text-3xl text-aero-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Zero Legal Restrictions</h3>
+                            <p class="text-slate-400">Fully indoor operation avoids DGCA airspace regulations.</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-aero-500 transition">
+                            <i class="fa-solid fa-indian-rupee-sign text-3xl text-aero-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Affordable</h3>
+                            <p class="text-slate-400">Cost-effective solution built for every Indian hospital.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Specs -->
-            <section id="specs" class="py-20 bg-tech-dark relative border-t border-slate-800">
+            <!-- WHY DAAS -->
+            <section id="why-daas" class="py-20 bg-tech-dark border-t border-slate-800">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 class="text-3xl font-bold text-white text-center mb-12">Technical Specifications</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                        <!-- Weight -->
-                        <div class="bg-slate-800 p-6 rounded-xl text-center border border-transparent hover:border-aero-500 transition">
-                            <div class="w-12 h-12 bg-aero-900 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-scale-balanced text-aero-400"></i></div>
-                            <h3 class="text-white font-semibold">Weight</h3><p class="text-sm text-slate-400 mt-2">0.5 - 1 kg</p>
-                        </div>
-                        <!-- Propulsion -->
-                        <div class="bg-slate-800 p-6 rounded-xl text-center border border-transparent hover:border-aero-500 transition">
-                            <div class="w-12 h-12 bg-aero-900 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-fan text-aero-400"></i></div>
-                            <h3 class="text-white font-semibold">Propulsion</h3><p class="text-sm text-slate-400 mt-2">Ducted Fans</p>
-                        </div>
-                        <!-- Navigation -->
-                        <div class="bg-slate-800 p-6 rounded-xl text-center border border-transparent hover:border-aero-500 transition">
-                            <div class="w-12 h-12 bg-aero-900 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-route text-aero-400"></i></div>
-                            <h3 class="text-white font-semibold">Navigation</h3><p class="text-sm text-slate-400 mt-2">Preset Route Mode</p>
-                        </div>
-                        <!-- Endurance -->
-                        <div class="bg-slate-800 p-6 rounded-xl text-center border border-transparent hover:border-aero-500 transition">
-                            <div class="w-12 h-12 bg-aero-900 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-battery-full text-aero-400"></i></div>
-                            <h3 class="text-white font-semibold">Endurance</h3><p class="text-sm text-slate-400 mt-2">15 Mins Flight</p>
-                        </div>
-                        <!-- Safety -->
-                        <div class="bg-slate-800 p-6 rounded-xl text-center border border-transparent hover:border-aero-500 transition">
-                            <div class="w-12 h-12 bg-aero-900 mx-auto rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-shield-halved text-aero-400"></i></div>
-                            <h3 class="text-white font-semibold">Safety</h3><p class="text-sm text-slate-400 mt-2">Hospital Safe</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- How It Works (UPDATED) -->
-            <section id="working" class="py-20 bg-slate-900 border-t border-slate-800">
-                <div class="max-w-7xl mx-auto px-4">
-                    <h2 class="text-3xl font-bold text-white text-center mb-16">Workflow Logic</h2>
-                    <div class="relative">
-                        <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-700 -z-0"></div>
-                        <div class="grid md:grid-cols-4 gap-8 relative z-10">
-                            <div class="bg-slate-800 p-6 rounded-lg text-center border border-slate-700"><div class="w-10 h-10 bg-aero-600 rounded-full text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">1</div><h4 class="text-white font-bold">Weight Check</h4><p class="text-slate-400 text-sm mt-2">Auto-takeoff validation.</p></div>
-                            
-                            <!-- STEP 2 UPDATED -->
-                            <div class="bg-slate-800 p-6 rounded-lg text-center border border-slate-700"><div class="w-10 h-10 bg-aero-600 rounded-full text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">2</div><h4 class="text-white font-bold">GPS Navigation</h4><p class="text-slate-400 text-sm mt-2">Preset route mode.</p></div>
-                            
-                            <div class="bg-slate-800 p-6 rounded-lg text-center border border-slate-700"><div class="w-10 h-10 bg-aero-600 rounded-full text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">3</div><h4 class="text-white font-bold">Avoidance</h4><p class="text-slate-400 text-sm mt-2">Dynamic path adjustment.</p></div>
-                            <div class="bg-slate-800 p-6 rounded-lg text-center border border-slate-700"><div class="w-10 h-10 bg-aero-600 rounded-full text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">4</div><h4 class="text-white font-bold">Delivery</h4><p class="text-slate-400 text-sm mt-2">Precision landing.</p></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Applications -->
-            <section class="py-20 bg-tech-dark border-t border-slate-800">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid md:grid-cols-2 gap-12">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h3 class="text-2xl font-bold text-white mb-6">Applications</h3>
-                            <div class="space-y-4">
-                                <div class="bg-slate-800 p-4 rounded-lg flex items-start"><i class="fa-solid fa-pills text-green-400 mt-1 mr-4"></i><div><h4 class="font-bold text-white">Emergency Medicine</h4><p class="text-slate-400 text-sm">Delivering crash cart meds instantly.</p></div></div>
-                                <div class="bg-slate-800 p-4 rounded-lg flex items-start"><i class="fa-solid fa-flask text-purple-400 mt-1 mr-4"></i><div><h4 class="font-bold text-white">Lab Samples</h4><p class="text-slate-400 text-sm">Safe transport to pathology.</p></div></div>
-                                <div class="bg-slate-800 p-4 rounded-lg flex items-start"><i class="fa-solid fa-industry text-orange-400 mt-1 mr-4"></i><div><h4 class="font-bold text-white">Other: Industry</h4><p class="text-slate-400 text-sm">Can be adapted for factory tool delivery.</p></div></div>
+                            <h2 class="text-3xl font-bold text-white mb-6 tech-font">Why DAAS?</h2>
+                            <ul class="space-y-6">
+                                <li class="flex items-start"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-aero-900 flex items-center justify-center border border-aero-500"><i class="fa-solid fa-microchip text-aero-400"></i></div><div class="ml-4"><h4 class="text-lg font-bold text-white">Reliable Hardware</h4><p class="text-slate-400">Rugged construction designed for daily use.</p></div></li>
+                                <li class="flex items-start"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-aero-900 flex items-center justify-center border border-aero-500"><i class="fa-solid fa-laptop-code text-aero-400"></i></div><div class="ml-4"><h4 class="text-lg font-bold text-white">Simple Software</h4><p class="text-slate-400">One-click ordering system for doctors and nurses.</p></div></li>
+                                <li class="flex items-start"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-aero-900 flex items-center justify-center border border-aero-500"><i class="fa-solid fa-arrow-trend-down text-aero-400"></i></div><div class="ml-4"><h4 class="text-lg font-bold text-white">Low-Cost Automation</h4><p class="text-slate-400">Efficiency without the high price tag of foreign robots.</p></div></li>
+                                <li class="flex items-start"><div class="flex-shrink-0 w-10 h-10 rounded-full bg-aero-900 flex items-center justify-center border border-aero-500"><i class="fa-solid fa-flag text-aero-400"></i></div><div class="ml-4"><h4 class="text-lg font-bold text-white">Built for Indian Hospitals</h4><p class="text-slate-400">Engineered to handle crowds, narrow corridors, and rough usage.</p></div></li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-4">"The future of healthcare logistics is not on the ground, it's in the air."</h3>
+                            <p class="text-aero-400 font-bold">- Team DAAS</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRODUCT SNAPSHOT (On Home Page) -->
+            <section id="product-snapshot" class="py-20 bg-slate-900 border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold text-white text-center mb-12 tech-font">Product Snapshot</h2>
+                    <div class="flex flex-col lg:flex-row gap-12 items-center">
+                        <div class="w-full lg:w-1/2">
+                            <div class="relative aspect-video bg-tech-blueprint border-2 border-aero-500/50 rounded-xl flex items-center justify-center overflow-hidden group shadow-2xl shadow-aero-900/50 cursor-pointer" onclick="openLightbox(this.querySelector('img'))">
+                                <img src="snapshot.jpg" onerror="this.style.display='none'" alt="Aeroglide Specs Shot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 z-10">
+                                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 z-0 pointer-events-none">
+                                    <i class="fa-solid fa-camera text-4xl text-slate-600 mb-2"></i>
+                                    <p class="text-slate-400 text-sm">Upload 'snapshot.jpg'</p>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-white mb-6">Business Impact</h3>
-                            <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-xl border border-slate-700">
-                                <h4 class="text-xl font-bold text-white mb-4">Why Invest?</h4>
-                                <ul class="space-y-3 text-slate-300">
-                                    <li><i class="fa-solid fa-arrow-trend-up text-aero-500 mr-2"></i> <strong>Efficiency:</strong> Reduces delivery time by 60%.</li>
-                                    <li><i class="fa-solid fa-wallet text-aero-500 mr-2"></i> <strong>Cost:</strong> One-time investment vs recurring labor costs.</li>
-                                    <li><i class="fa-solid fa-robot text-aero-500 mr-2"></i> <strong>Reliability:</strong> Removes human fatigue factor.</li>
+                        <div class="w-full lg:w-1/2">
+                            <div class="bg-slate-800 rounded-xl p-8 border border-slate-700">
+                                <h3 class="text-2xl font-bold text-white mb-6">Quick Specs</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex justify-between border-b border-slate-700 pb-2"><span class="text-slate-400">Payload Capacity</span><span class="text-white font-mono font-bold">500 – 700 g</span></li>
+                                    <li class="flex justify-between border-b border-slate-700 pb-2"><span class="text-slate-400">Flight Time</span><span class="text-white font-mono font-bold">18 – 22 minutes</span></li>
+                                    <li class="flex justify-between border-b border-slate-700 pb-2"><span class="text-slate-400">Recharge Time</span><span class="text-white font-mono font-bold">20 – 25 minutes</span></li>
+                                    <li class="flex justify-between border-b border-slate-700 pb-2"><span class="text-slate-400">Sensor Suite</span><span class="text-white font-mono font-bold text-right">IR + Ultrasonic + Optical Flow</span></li>
+                                    <li class="flex justify-between border-b border-slate-700 pb-2"><span class="text-slate-400">Max Indoor Speed</span><span class="text-white font-mono font-bold">1.2 – 1.5 m/s</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -224,7 +207,111 @@
             </section>
         </div>
 
-        <!-- VIEW 2: DESIGN PAGE -->
+        <!-- VIEW 2: PRODUCT & PRICING PAGE (Detailed) -->
+        <div id="product-page" class="page-section hidden fade-in">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+                <button onclick="safeShowPage('home')" class="mb-8 text-aero-500 font-bold flex items-center text-lg hover:text-white transition"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Home</button>
+                
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-16 text-center tech-font">Aeroglide™ Specifications</h1>
+
+                <!-- HARDWARE SECTION -->
+                <div class="grid md:grid-cols-3 gap-8 mb-20">
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-6"><i class="fa-solid fa-microchip text-2xl text-aero-400 mr-3"></i><h3 class="text-xl font-bold text-white">1. Hardware</h3></div>
+                        <ul class="space-y-3 text-slate-300 text-sm">
+                            <li class="flex justify-between"><span>Dimensions:</span> <span class="font-mono text-white">20cm × 20cm</span></li>
+                            <li class="flex justify-between"><span>Weight:</span> <span class="font-mono text-white">~450g</span></li>
+                            <li class="flex justify-between"><span>Frame:</span> <span class="font-mono text-white">ABS Lightweight</span></li>
+                            <li class="flex justify-between"><span>Motors:</span> <span class="font-mono text-white">High-efficiency Brushless</span></li>
+                            <li class="flex justify-between"><span>Battery:</span> <span class="font-mono text-white">3S Li-ion (2200–3000mAh)</span></li>
+                            <li class="flex justify-between"><span>Payload:</span> <span class="font-mono text-white">500–700 grams</span></li>
+                            <li class="flex justify-between"><span>Flight Time:</span> <span class="font-mono text-white">Max 20 mins</span></li>
+                            <li class="flex justify-between"><span>Indoor Speed:</span> <span class="font-mono text-white">1.2–1.5 m/s</span></li>
+                            <li class="flex justify-between"><span>Landing:</span> <span class="font-mono text-white">Precision Landing</span></li>
+                            <li class="flex justify-between"><span>Safety:</span> <span class="font-mono text-white">Auto-stop + Collision Detect</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-6"><i class="fa-solid fa-charging-station text-2xl text-aero-400 mr-3"></i><h3 class="text-xl font-bold text-white">2. Charging Pad</h3></div>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>15W Wireless Charging</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>Auto-landing markers</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>Low power consumption</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>Ratio: 1 pad per 1–2 drones</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-6"><i class="fa-solid fa-cloud text-2xl text-aero-400 mr-3"></i><h3 class="text-xl font-bold text-white">3. DAAS Cloud</h3></div>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-aero-500 mt-1 mr-3"></i>Real-time tracking</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-aero-500 mt-1 mr-3"></i>Smart Delivery Routing</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-aero-500 mt-1 mr-3"></i>Drone Health Stats</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-aero-500 mt-1 mr-3"></i>Delivery Logs</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-aero-500 mt-1 mr-3"></i>User Roles (Nurses/Staff)</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-aero-500 mt-1 mr-3"></i>One-click delivery system</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PRICING SECTION -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold text-white text-center mb-10 tech-font">Pricing Structure</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-slate-900 border border-slate-700 rounded-xl overflow-hidden">
+                            <div class="bg-slate-800 p-4 border-b border-slate-700 text-center"><h3 class="text-xl font-bold text-white">One-Time Purchases</h3><p class="text-sm text-slate-400">Hardware Ownership</p></div>
+                            <div class="p-6"><table class="w-full text-left text-slate-300"><thead><tr class="border-b border-slate-700 text-slate-500 text-sm"><th class="pb-2">Item</th><th class="pb-2 text-right">Price</th></tr></thead><tbody class="divide-y divide-slate-800"><tr><td class="py-4 font-bold text-white">Aeroglide Drone</td><td class="py-4 text-right font-mono text-aero-400">₹12,000</td></tr><tr><td class="py-4">Charging Pad</td><td class="py-4 text-right font-mono text-aero-400">₹1,200 – 1,500</td></tr></tbody></table></div>
+                        </div>
+                        <div class="bg-slate-900 border border-slate-700 rounded-xl overflow-hidden">
+                            <div class="bg-slate-800 p-4 border-b border-slate-700 text-center"><h3 class="text-xl font-bold text-white">Monthly Services</h3><p class="text-sm text-slate-400">Software & Support</p></div>
+                            <div class="p-6"><table class="w-full text-left text-slate-300"><thead><tr class="border-b border-slate-700 text-slate-500 text-sm"><th class="pb-2">Service</th><th class="pb-2 text-right">Price</th></tr></thead><tbody class="divide-y divide-slate-800"><tr><td class="py-4">Basic Software</td><td class="py-4 text-right font-mono text-aero-400">₹500</td></tr><tr><td class="py-4">Premium Software</td><td class="py-4 text-right font-mono text-aero-400">₹1,000</td></tr><tr><td class="py-4">AMC (Maintenance)</td><td class="py-4 text-right font-mono text-aero-400">₹300 – 400</td></tr></tbody></table></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BENEFITS SECTION -->
+                <div class="bg-gradient-to-r from-slate-900 to-slate-800 p-8 rounded-2xl border border-slate-700">
+                    <h2 class="text-2xl font-bold text-white mb-6 text-center">Hospital Benefits</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="flex items-start"><i class="fa-solid fa-arrow-trend-up text-green-500 mt-1 mr-3"></i><p class="text-slate-300">Handles <strong>30–45%</strong> of repetitive deliveries</p></div>
+                        <div class="flex items-start"><i class="fa-solid fa-user-nurse text-green-500 mt-1 mr-3"></i><p class="text-slate-300">Staff do less walking, <strong>more patient care</strong></p></div>
+                        <div class="flex items-start"><i class="fa-solid fa-bolt text-green-500 mt-1 mr-3"></i><p class="text-slate-300">Faster delivery improves <strong>ICU/OT efficiency</strong></p></div>
+                        <div class="flex items-start"><i class="fa-solid fa-infinity text-green-500 mt-1 mr-3"></i><p class="text-slate-300"><strong>Zero downtime</strong> due to auto-charging</p></div>
+                        <div class="flex items-start"><i class="fa-solid fa-sack-dollar text-green-500 mt-1 mr-3"></i><p class="text-slate-300">No change in salary structure → <strong>hospital comfort</strong></p></div>
+                    </div>
+                </div>
+                <div class="h-20"></div>
+            </div>
+        </div>
+
+        <!-- VIEW 3: HOW IT WORKS PAGE -->
+        <div id="how-it-works-page" class="page-section hidden fade-in">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+                <button onclick="safeShowPage('home')" class="mb-8 text-aero-500 font-bold flex items-center text-lg hover:text-white transition"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Home</button>
+                <div class="text-center mb-16"><h1 class="text-4xl md:text-5xl font-bold text-white mb-4">How It Works</h1><p class="text-slate-400 max-w-2xl mx-auto">From order to delivery in 5 simple steps.</p></div>
+                <div class="grid md:grid-cols-5 gap-4 mb-20 relative">
+                    <div class="hidden md:block absolute top-12 left-0 w-full h-1 bg-slate-700 -z-10 transform -translate-y-1/2"></div>
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 text-center relative"><div class="w-12 h-12 bg-aero-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 border-4 border-tech-dark">1</div><h3 class="text-white font-bold mb-2">Load</h3><p class="text-slate-400 text-sm">Staff places medicine/sample in drone compartment.</p></div>
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 text-center relative"><div class="w-12 h-12 bg-aero-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 border-4 border-tech-dark">2</div><h3 class="text-white font-bold mb-2">Select</h3><p class="text-slate-400 text-sm">Pick destination ward/ICU/OPD from DAAS app.</p></div>
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 text-center relative"><div class="w-12 h-12 bg-aero-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 border-4 border-tech-dark">3</div><h3 class="text-white font-bold mb-2">Fly</h3><p class="text-slate-400 text-sm">Drone auto-navigates safely through hallways.</p></div>
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 text-center relative"><div class="w-12 h-12 bg-aero-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 border-4 border-tech-dark">4</div><h3 class="text-white font-bold mb-2">Deliver</h3><p class="text-slate-400 text-sm">Arrives in 2–5 minutes (manual is 10–15).</p></div>
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 text-center relative"><div class="w-12 h-12 bg-aero-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 border-4 border-tech-dark">5</div><h3 class="text-white font-bold mb-2">Recharge</h3><p class="text-slate-400 text-sm">Returns to pad → charges automatically.</p></div>
+                </div>
+                <div class="bg-slate-900 border border-slate-700 rounded-xl p-10 text-center">
+                    <h2 class="text-2xl font-bold text-white mb-8">Safety & Reliability</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="p-4 bg-slate-800 rounded-lg"><i class="fa-solid fa-eye text-aero-400 text-2xl mb-3"></i><h4 class="text-white font-bold">Obstacle Detection</h4></div>
+                        <div class="p-4 bg-slate-800 rounded-lg"><i class="fa-solid fa-hand-paper text-aero-400 text-2xl mb-3"></i><h4 class="text-white font-bold">Emergency Halt</h4></div>
+                        <div class="p-4 bg-slate-800 rounded-lg"><i class="fa-solid fa-parachute-box text-aero-400 text-2xl mb-3"></i><h4 class="text-white font-bold">Anti-fall Protection</h4></div>
+                        <div class="p-4 bg-slate-800 rounded-lg"><i class="fa-solid fa-shield-halved text-aero-400 text-2xl mb-3"></i><h4 class="text-white font-bold">Enclosed Propellers</h4></div>
+                        <div class="p-4 bg-slate-800 rounded-lg"><i class="fa-solid fa-wifi text-aero-400 text-2xl mb-3"></i><h4 class="text-white font-bold">WiFi + Local Network</h4></div>
+                        <div class="p-4 bg-slate-800 rounded-lg"><i class="fa-solid fa-server text-aero-400 text-2xl mb-3"></i><h4 class="text-white font-bold">Secure Data</h4></div>
+                    </div>
+                </div>
+                <div class="h-20"></div>
+            </div>
+        </div>
+
+        <!-- VIEW 4: DESIGN PAGE -->
         <div id="design-page" class="page-section hidden fade-in">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
                 <button onclick="safeShowPage('home')" class="mb-8 text-aero-500 font-bold flex items-center text-lg"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Home</button>
@@ -233,7 +320,7 @@
                     <p class="text-slate-400">From sketches to prototype.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Phase 1: Blueprint (Clickable) -->
+                    <!-- Phase 1: Blueprint -->
                     <div class="group relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 shadow-xl cursor-pointer" onclick="openLightbox(this.querySelector('img'))">
                         <div class="aspect-video bg-tech-blueprint flex items-center justify-center overflow-hidden relative">
                              <img src="blueprint.jpg" onerror="this.style.display='none'" alt="Drone Blueprint" class="w-full h-full object-cover z-10 hover:scale-105 transition-transform duration-500">
@@ -242,7 +329,7 @@
                         <div class="p-6"><h4 class="text-white font-bold text-lg mb-2">Phase 1: Blueprint & Specs</h4></div>
                     </div>
                     
-                    <!-- Phase 2: 3D Model (Interactive) -->
+                    <!-- Phase 2: 3D Model -->
                     <div class="group relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 shadow-xl">
                         <div class="aspect-video bg-slate-700 flex items-center justify-center relative overflow-hidden">
                             <model-viewer 
@@ -260,7 +347,7 @@
                         <div class="p-6"><h4 class="text-white font-bold text-lg mb-2">Phase 2: 3D Modeling</h4></div>
                     </div>
 
-                    <!-- Phase 3: Prototype (Clickable) -->
+                    <!-- Phase 3: Prototype -->
                     <div class="group relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 shadow-xl cursor-pointer" onclick="openLightbox(this.querySelector('img'))">
                         <div class="aspect-video bg-slate-700 flex items-center justify-center overflow-hidden relative">
                             <img src="prototype.jpg" onerror="this.style.display='none'" alt="Real Prototype" class="w-full h-full object-cover z-10 hover:scale-105 transition-transform duration-500">
@@ -272,26 +359,52 @@
             </div>
         </div>
 
-        <!-- VIEW 3: ABOUT PAGE (PLURALIZED) -->
+        <!-- VIEW 5: ABOUT PAGE -->
         <div id="about-page" class="page-section hidden fade-in">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 min-h-screen">
                 <button onclick="safeShowPage('home')" class="mb-8 text-aero-500 font-bold flex items-center text-lg"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Home</button>
                 <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl">
-                    <div class="flex flex-col md:flex-row items-center gap-8">
-                        <div class="w-32 h-32 bg-slate-600 rounded-full flex items-center justify-center text-4xl text-slate-400 border-4 border-slate-700 shadow-lg"><i class="fa-solid fa-users"></i></div>
+                    <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+                        <div class="w-32 h-32 bg-slate-600 rounded-full flex items-center justify-center text-4xl text-slate-400 border-4 border-slate-700 shadow-lg"><i class="fa-solid fa-layer-group"></i></div>
                         <div>
-                            <h2 class="text-3xl font-bold text-white">About The Creators</h2>
-                            <p class="text-aero-400 font-medium mb-4">Class 11 Students (PCM + CS)</p>
-                            <p class="text-slate-300">We are passionate about Robotics and Embedded Systems. AeroGlide is our attempt to solve real-world logistics problems using the principles of Physics and Computer Science we learn in school. Our goal is to create technology that directly improves healthcare efficiency.</p>
-                            <div class="mt-4 flex gap-2"><span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Arduino</span><span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Python</span></div>
+                            <h2 class="text-3xl font-bold text-white">About DAAS</h2>
+                            <p class="text-aero-400 font-medium mb-4">Drone As A Service</p>
+                            <p class="text-slate-300 italic mb-2">"Free staff from repetitive tasks."</p>
+                            <p class="text-slate-400 text-sm">DAAS builds affordable indoor automation for hospitals.</p>
                         </div>
                     </div>
-                    <div class="mt-16">
-                        <h3 class="text-xl font-bold text-white mb-8 pl-4 border-l-4 border-aero-500">Project Timeline (2025)</h3>
-                        <div class="relative ml-3 border-l-2 border-slate-600 space-y-8 pb-4">
-                            <div class="relative pl-8"><div class="absolute -left-[9px] top-1 w-4 h-4 bg-green-500 rounded-full"></div><h4 class="text-white font-bold">June 2025</h4><p class="text-slate-400 text-sm">Ideation & Research</p></div>
-                            <div class="relative pl-8"><div class="absolute -left-[9px] top-1 w-4 h-4 bg-green-500 rounded-full"></div><h4 class="text-white font-bold">August 2025</h4><p class="text-slate-400 text-sm">Component Procurement</p></div>
-                            <div class="relative pl-8"><div class="absolute -left-[9px] top-1 w-4 h-4 bg-aero-500 rounded-full animate-pulse"></div><h4 class="text-white font-bold">Current Stage</h4><p class="text-slate-400 text-sm">Prototype Assembly</p></div>
+
+                    <!-- Why We Built -->
+                    <div class="mb-12">
+                        <h3 class="text-xl font-bold text-white mb-6 border-l-4 border-aero-500 pl-4">Why We Built Aeroglide</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center mr-3 text-red-400"><i class="fa-solid fa-clock"></i></div><p class="text-slate-300">Hospitals waste hours in manual ward-to-ward runs.</p></li>
+                            <li class="flex items-start"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center mr-3 text-orange-400"><i class="fa-solid fa-face-tired"></i></div><p class="text-slate-300">Staff get tired and less productive.</p></li>
+                            <li class="flex items-start"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center mr-3 text-red-500"><i class="fa-solid fa-triangle-exclamation"></i></div><p class="text-slate-300">Emergencies get delayed due to logistics.</p></li>
+                            <li class="flex items-start"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center mr-3 text-green-400"><i class="fa-solid fa-users"></i></div><p class="text-slate-300"><strong>Efficiency Increase:</strong> Work requiring 4-5 nurses can now be handled by 2-3.</p></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="border-t border-slate-700 pt-8">
+                        <h3 class="text-xl font-bold text-white mb-6">Contact Us</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-slate-900 p-4 rounded-lg flex items-center">
+                                <i class="fa-solid fa-envelope text-aero-400 text-xl mr-4"></i>
+                                <div>
+                                    <p class="text-xs text-slate-500">Email</p>
+                                    <!-- REPLACE WITH YOUR EMAIL -->
+                                    <a href="mailto:INSERT_EMAIL_HERE" class="text-white font-mono hover:text-aero-400">Aeroglide.drone.as.a.service@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded-lg flex items-center">
+                                <i class="fa-solid fa-phone text-aero-400 text-xl mr-4"></i>
+                                <div>
+                                    <p class="text-xs text-slate-500">Phone</p>
+                                    <!-- REPLACE WITH YOUR PHONE -->
+                                    <a href="tel:INSERT_PHONE_HERE" class="text-white font-mono hover:text-aero-400">7011179298</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -302,7 +415,7 @@
 
     <footer class="bg-black py-12 border-t border-slate-800 mt-20">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-600">
-            &copy; 2025 AeroGlide Project
+            &copy; 2025 DAAS - Drone As A Service
         </div>
     </footer>
 
@@ -313,39 +426,21 @@
     </div>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
+        function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
         function safeShowPage(pageId, scrollId = null) {
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(sec => sec.classList.add('hidden'));
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('hidden'));
             document.getElementById(pageId + '-page').classList.remove('hidden');
             document.getElementById('mobile-menu').classList.add('hidden');
-            if (scrollId && pageId === 'home') {
-                setTimeout(() => {
-                    const el = document.getElementById(scrollId);
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            } else {
-                window.scrollTo(0, 0);
-            }
+            if (scrollId && pageId === 'home') setTimeout(() => document.getElementById(scrollId)?.scrollIntoView({ behavior: 'smooth' }), 100);
+            else window.scrollTo(0, 0);
         }
-
-        function openLightbox(imgElement) {
-            if (!imgElement || imgElement.style.display === 'none') return;
-            const modal = document.getElementById('lightbox-modal');
-            const modalImg = document.getElementById('lightbox-image');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            modalImg.src = imgElement.src;
+        function openLightbox(img) {
+            if (!img || img.style.display === 'none') return;
+            document.getElementById('lightbox-modal').classList.remove('hidden', 'flex');
+            document.getElementById('lightbox-modal').classList.add('flex');
+            document.getElementById('lightbox-image').src = img.src;
         }
-
-        function closeLightbox() {
-            const modal = document.getElementById('lightbox-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
+        function closeLightbox() { document.getElementById('lightbox-modal').classList.add('hidden'); }
     </script>
 </body>
 </html>
